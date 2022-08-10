@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "amatsukaze-client"
+version = "0.0.1"
+description = "Client library for Amatsukaze"
+authors = ["pinfort <ptg@nijitei.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/pinfort/amatsukaze-client"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+lxml = "^4.9.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
