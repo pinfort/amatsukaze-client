@@ -1,7 +1,7 @@
 from enum import Enum, unique
 
 @unique
-class RPCNMethodId(Enum):
+class RPCMethodId(Enum):
         SET_PROFILE = 100
         SET_AUTO_SELECT = 101
         ADD_QUEUE = 102
