@@ -1,7 +1,7 @@
-from enum import Enum, unique
+from enum import Enum, IntEnum, unique
 
 @unique
-class RPCMethodId(Enum):
+class AmatsukazeRPCMessageTypeId(IntEnum):
         SET_PROFILE = 100
         SET_AUTO_SELECT = 101
         ADD_QUEUE = 102
