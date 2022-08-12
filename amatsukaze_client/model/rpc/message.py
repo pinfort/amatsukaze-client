@@ -8,7 +8,8 @@ class AmatsukazeRPCMessage():
     def to_bytes(self) -> bytes:
         """
         一つのメッセージは、以下のように、4bytes + bodyの形式である。
-        ----------------------------
+        |||
+        |--------|-----------------|
         | 4bytes | {length} bytes  |
         | length | message body    |
         ----------------------------

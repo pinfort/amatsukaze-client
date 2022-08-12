@@ -14,7 +14,8 @@ class AmatsukazeRPCMessageContainer():
     def to_bytes(self) -> bytes:
         """
             メッセージコンテナは以下の構造である。
-            -----------------------------------
+            ||||
+            |--------|--------|----------------|
             | 2bytes | 4bytes | N bytes        |
             | typeId | length | message bodies |
             -----------------------------------
