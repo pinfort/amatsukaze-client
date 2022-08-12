@@ -3,7 +3,7 @@ from dataclasses import dataclass
 @dataclass
 class AmatsukazeRPCMessage():
     length: int
-    messageBody: bytes
+    message_body: bytes
 
     def toBytes(self) -> bytes:
         """
@@ -13,7 +13,7 @@ class AmatsukazeRPCMessage():
         | length | message body    |
         ----------------------------
         """
-        self.length.to_bytes(4, byteorder='little') + self.messageBody
+        self.length.to_bytes(4, byteorder='little') + self.message_body
 
-def fromBytes(messageBody: bytes) -> AmatsukazeRPCMessage:
-    return AmatsukazeRPCMessage(length=len(messageBody), messageBody=messageBody)
+def fromBytes(message_body: bytes) -> AmatsukazeRPCMessage:
+    return AmatsukazeRPCMessage(length=len(message_body), message_body=message_body)
