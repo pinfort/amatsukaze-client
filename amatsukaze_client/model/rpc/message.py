@@ -5,7 +5,7 @@ class AmatsukazeRPCMessage():
     length: int
     message_body: bytes
 
-    def toBytes(self) -> bytes:
+    def to_bytes(self) -> bytes:
         """
         一つのメッセージは、以下のように、4bytes + bodyの形式である。
         ----------------------------
@@ -15,5 +15,5 @@ class AmatsukazeRPCMessage():
         """
         self.length.to_bytes(4, byteorder='little') + self.message_body
 
-def fromBytes(message_body: bytes) -> AmatsukazeRPCMessage:
+def from_bytes(message_body: bytes) -> AmatsukazeRPCMessage:
     return AmatsukazeRPCMessage(length=len(message_body), message_body=message_body)

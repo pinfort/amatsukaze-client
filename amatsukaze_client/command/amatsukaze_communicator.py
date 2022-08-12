@@ -1,8 +1,8 @@
 from typing import Iterator
-from amatsukaze_client.component.TcpConnection import TcpConnection
-from amatsukaze_client.enum.AmatsukazeRPCMessageTypeId import AmatsukazeRPCMessageTypeId
-from amatsukaze_client.model.AmatsukazeRPCMessage import AmatsukazeRPCMessage
-from amatsukaze_client.model.AmatsukazeRPCMessageContainer import AmatsukazeRPCMessageContainer
+from amatsukaze_client.component.tcp_connection import TcpConnection
+from amatsukaze_client.enum.rpc.message_type_id import AmatsukazeRPCMessageTypeId
+from amatsukaze_client.model.rpc.message import AmatsukazeRPCMessage
+from amatsukaze_client.model.rpc.message_container import AmatsukazeRPCMessageContainer
 
 class AmatsukazeCommunicator():
     __tcp_connection: TcpConnection
@@ -11,7 +11,7 @@ class AmatsukazeCommunicator():
         self.__tcp_connection = tcp_connection
 
     def send(self, containered_message: AmatsukazeRPCMessageContainer) -> int:
-        self.__tcp_connection.send(containered_message.toBytes())
+        self.__tcp_connection.send(containered_message.to_bytes())
 
     def recv(self) -> AmatsukazeRPCMessageContainer:
         """
