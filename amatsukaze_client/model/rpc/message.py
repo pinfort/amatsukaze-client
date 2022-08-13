@@ -14,7 +14,7 @@ class AmatsukazeRPCMessage():
         | length | message body    |
         ----------------------------
         """
-        self.length.to_bytes(4, byteorder='little') + self.message_body
+        return self.length.to_bytes(4, byteorder='little') + self.message_body
 
 def from_bytes(message_body: bytes) -> AmatsukazeRPCMessage:
     return AmatsukazeRPCMessage(length=len(message_body), message_body=message_body)
