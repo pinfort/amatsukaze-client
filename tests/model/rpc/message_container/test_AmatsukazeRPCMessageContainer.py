@@ -20,3 +20,25 @@ def test_to_bytes_success():
     expected: bytes = b'\x6d\x00\xc8\x00\x00\x00\x64\x00\x00\x00test bytes'
 
     assert actual == expected
+
+def test_to_bytes_multimessage_success():
+    container = AmatsukazeRPCMessageContainer(
+        message_type_id=AmatsukazeRPCMessageTypeId.ADD_DRCS_MAP,
+        length=200,
+        messages=[
+            AmatsukazeRPCMessage(
+                length=100,
+                message_body=b'test bytes',
+            ),
+            AmatsukazeRPCMessage(
+                length=26383,
+                message_body=b'second bytes',
+            ),
+        ],
+    )
+
+    actual: bytes = container.to_bytes()
+
+    expected: bytes = b'\x6d\x00\xc8\x00\x00\x00\x64\x00\x00\x00test bytes\x0f\x67\x00\x00second bytes'
+
+    assert actual == expected
