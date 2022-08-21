@@ -1,0 +1,17 @@
+{
+  "flake8_warning": [
+    {
+      "owner": "pinfort",
+      "severity": "warning",
+      "pattern": [
+        {
+          "regexp": "^([^:]+):(\\d+):(\\d+):\\s+(W\\d+\\s+.+)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "message": 4
+        }
+      ]
+    }
+  ]
+}
