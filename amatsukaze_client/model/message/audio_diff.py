@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class AudioDiff():
+class AudioDiff:
     total_src_frames: int
     total_out_frames: int
     total_out_unique_frames: int

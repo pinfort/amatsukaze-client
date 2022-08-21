@@ -3,7 +3,7 @@ from typing import List
 
 
 @dataclass
-class Setting():
+class Setting:
     amatsukaze_path: str
     x264_path: str
     x265_path: str

@@ -6,8 +6,9 @@ from amatsukaze_client.enum.message.d3dvpgpu import D3dvpgpu
 from amatsukaze_client.enum.message.qtgmc_preset import QtgmcPreset
 from amatsukaze_client.enum.message.filter_fps import FilterFps
 
+
 @dataclass
-class FilterSetting():
+class FilterSetting:
     enable_cuda: bool
     enable_deblock: bool
     deblock_quality: int

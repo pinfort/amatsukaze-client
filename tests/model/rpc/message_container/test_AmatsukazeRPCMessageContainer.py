@@ -10,16 +10,17 @@ def test_to_bytes_success():
         messages=[
             AmatsukazeRPCMessage(
                 length=100,
-                message_body=b'test bytes',
+                message_body=b"test bytes",
             ),
         ],
     )
 
     actual: bytes = container.to_bytes()
 
-    expected: bytes = b'\x6d\x00\xc8\x00\x00\x00\x64\x00\x00\x00test bytes'
+    expected: bytes = b"\x6d\x00\xc8\x00\x00\x00\x64\x00\x00\x00test bytes"
 
     assert actual == expected
+
 
 def test_to_bytes_multimessage_success():
     container = AmatsukazeRPCMessageContainer(
@@ -28,17 +29,17 @@ def test_to_bytes_multimessage_success():
         messages=[
             AmatsukazeRPCMessage(
                 length=100,
-                message_body=b'test bytes',
+                message_body=b"test bytes",
             ),
             AmatsukazeRPCMessage(
                 length=26383,
-                message_body=b'second bytes',
+                message_body=b"second bytes",
             ),
         ],
     )
 
     actual: bytes = container.to_bytes()
 
-    expected: bytes = b'\x6d\x00\xc8\x00\x00\x00\x64\x00\x00\x00test bytes\x0f\x67\x00\x00second bytes'
+    expected: bytes = b"\x6d\x00\xc8\x00\x00\x00\x64\x00\x00\x00test bytes\x0f\x67\x00\x00second bytes"
 
     assert actual == expected

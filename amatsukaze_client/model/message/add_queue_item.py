@@ -3,6 +3,6 @@ from typing import Union
 
 
 @dataclass
-class AddQueueItem():
+class AddQueueItem:
     path: str
     hash: Union[bytes, None]

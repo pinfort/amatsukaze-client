@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class LogoData():
+class LogoData:
     service_id: int
     file_name: str
     image_width: int

@@ -3,7 +3,7 @@ from typing import List
 
 
 @dataclass
-class State():
+class State:
     pause: bool
     suspend: bool
     encoder_suspend: List[bool]

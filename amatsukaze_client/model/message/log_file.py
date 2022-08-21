@@ -2,6 +2,6 @@ from dataclasses import dataclass
 
 
 @dataclass
-class LogFile():
+class LogFile:
     id: int
     content: str

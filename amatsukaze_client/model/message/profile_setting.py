@@ -11,8 +11,9 @@ from amatsukaze_client.model.message.filter_setting import FilterSetting
 from amatsukaze_client.model.message.req_resource import ReqResource
 from amatsukaze_client.model.message.bitrate_setting import BitrateSetting
 
+
 @dataclass
-class ProfileSetting():
+class ProfileSetting:
     name: str
     last_update: datetime
     encoder_type: EncoderType
@@ -65,7 +66,7 @@ class ProfileSetting():
     rename_format: str
     enable_gunre_folder: bool
     req_resources: List[ReqResource]
-    
+
     enable_pmt_cut: bool
     pmt_cut_head_rate: float
     pmt_cut_tail_rate: float

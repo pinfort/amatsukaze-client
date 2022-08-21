@@ -3,7 +3,7 @@ from typing import List
 
 
 @dataclass
-class UiState():
+class UiState:
     last_used_profile: str
     last_output_path: str
     last_add_queue_bat: str
