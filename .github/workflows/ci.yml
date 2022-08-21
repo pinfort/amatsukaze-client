@@ -30,7 +30,6 @@ jobs:
     - name: Add problem matcher
       run: |
         echo "::add-matcher::.github/flake8_error.json"
-        echo "::add-matcher::.github/flake8_warning.json"
     - name: Poetry Install Dependencies
       run: |
         poetry install --no-interaction
