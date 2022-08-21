@@ -228,7 +228,7 @@ class LogItem():
 
     @property
     def display_logo(self) -> str:
-        return next(self.logo_files, "なし")
+        return next(iter(self.logo_files), "なし")
     
     @property
     def display_chapter(self) -> str:
