@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class ServerInfo():
+class ServerInfo:
     host_name: str
     mac_address: bytes
     version: str

@@ -4,7 +4,7 @@ from .req_resource import ReqResource
 
 
 @dataclass
-class Resource():
+class Resource:
     req_resource: ReqResource
     gpu_index: int
     encoder_index: int

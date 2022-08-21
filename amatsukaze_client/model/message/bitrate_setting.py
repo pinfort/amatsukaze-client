@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class BitrateSetting():
+class BitrateSetting:
     a: float
     b: float
     h264: float

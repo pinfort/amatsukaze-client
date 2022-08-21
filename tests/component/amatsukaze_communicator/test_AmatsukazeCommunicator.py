@@ -18,12 +18,14 @@ class TcpConnection4Test(TcpConnection):
         return len(messsage)
 
     def recv(self, length: int) -> bytes:
-        return length.to_bytes(4, byteorder='little')
+        return length.to_bytes(4, byteorder="little")
 
     def __del__(self) -> None:
         pass
 
+
 tcp_connection = TcpConnection4Test()
+
 
 def test_send_success():
     communicator = AmatsukazeCommunicator(tcp_connection)
@@ -31,12 +33,7 @@ def test_send_success():
         AmatsukazeRPCMessageContainer(
             message_type_id=AmatsukazeRPCMessageTypeId.ADD_DRCS_MAP,
             length=100,
-            messages=[
-                AmatsukazeRPCMessage(
-                    length=20,
-                    message_body=b'bytes for test'
-                )
-            ]
+            messages=[AmatsukazeRPCMessage(length=20, message_body=b"bytes for test")],
         )
     )
     assert actual == 24

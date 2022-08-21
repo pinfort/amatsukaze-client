@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class OperationResult():
+class OperationResult:
     is_failed: bool
     message: str
     stack_trace: str

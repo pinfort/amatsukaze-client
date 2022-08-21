@@ -3,6 +3,6 @@ from typing import List
 
 
 @dataclass
-class ConsoleData():
+class ConsoleData:
     index: int
     text: List[str]

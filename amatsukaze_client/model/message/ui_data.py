@@ -13,8 +13,9 @@ from amatsukaze_client.model.message.encode_state import EncodeState
 from amatsukaze_client.model.message.finish_setting import FinishSetting
 from amatsukaze_client.enum.message.state_change_event import StateChangeEvent
 
+
 @dataclass
-class UIData():
+class UIData:
     state: State
     queue_data: QueueData
     queue_update: QueueUpdate

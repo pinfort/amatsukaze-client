@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class ErrorCount():
+class ErrorCount:
     name: str
     count: int
 

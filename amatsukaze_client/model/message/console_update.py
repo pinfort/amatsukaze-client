@@ -2,6 +2,6 @@ from dataclasses import dataclass
 
 
 @dataclass
-class ConsoleUpdate():
+class ConsoleUpdate:
     index: int
     data: bytes

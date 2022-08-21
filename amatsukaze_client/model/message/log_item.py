@@ -7,8 +7,9 @@ from typing import Iterable, List, Union
 from amatsukaze_client.model.message.audio_diff import AudioDiff
 from amatsukaze_client.model.message.error_count import ErrorCount
 
+
 @dataclass
-class LogItem():
+class LogItem:
     src_path: str
     success: bool
     dst_path: str
@@ -45,7 +46,7 @@ class LogItem():
     @property
     def encode_duration(self) -> timedelta:
         return self.encode_finish_date - self.encode_start_date
-    
+
     @property
     def display_result(self) -> str:
         if not self.success:
@@ -54,21 +55,21 @@ class LogItem():
             return "△"
         else:
             return "〇"
-    
+
     @property
     def display_src_directory(self) -> str:
         return os.path.dirname(self.src_path)
-    
+
     @property
     def display_src_filename(self) -> str:
         return os.path.basename(self.src_path)
-    
+
     @property
     def display_out_directory(self) -> Union[str, None]:
         if self.out_path is not None and self.out_path.count() > 0:
             return os.path.dirname(self.out_path[0])
         return "-"
-    
+
     @property
     def display_out_file(self) -> Union[Iterable[str], None]:
         if self.out_path is None:
@@ -81,25 +82,27 @@ class LogItem():
             return "-"
         else:
             return str(self.out_path.count())
-    
+
     @property
     def display_num_incident(self) -> str:
         return str(self.incident)
-    
+
     @property
     def display_encode_start(self) -> str:
         return self.encode_start_date.strftime("%Y/%m/%d %H:%M:%S")
-    
+
     @property
     def display_encode_finish(self) -> str:
         return self.encode_finish_date.strftime("%Y/%m/%d %H:%M:%S")
-    
+
     @property
     def display_encode_duration(self) -> str:
         mm, ss = divmod(self.encode_duration.seconds, 60)
         hh, mm = divmod(mm, 60)
         hours: int = self.encode_duration.days * 24 + hh
-        return "{hours}時間{minutes:02}分{seconds:02}秒".format(hours=hours, minutes=mm, seconds=ss)
+        return "{hours}時間{minutes:02}分{seconds:02}秒".format(
+            hours=hours, minutes=mm, seconds=ss
+        )
 
     @property
     def display_src_duration(self) -> Union[str, None]:
@@ -109,7 +112,9 @@ class LogItem():
             mm, ss = divmod(self.src_video_duration.seconds, 60)
             hh, mm = divmod(mm, 60)
             hours: int = self.src_video_duration.days * 24 + hh
-            return "{hours}時間{minutes:02}分{seconds:02}秒".format(hours=hours, minutes=mm, seconds=ss)
+            return "{hours}時間{minutes:02}分{seconds:02}秒".format(
+                hours=hours, minutes=mm, seconds=ss
+            )
 
     @property
     def display_out_duration(self) -> str:
@@ -119,50 +124,58 @@ class LogItem():
             mm, ss = divmod(self.out_video_duration.seconds, 60)
             hh, mm = divmod(mm, 60)
             hours: int = self.out_video_duration.days * 24 + hh
-            return "{hours}時間{minutes:02}分{seconds:02}秒".format(hours=hours, minutes=mm, seconds=ss)
+            return "{hours}時間{minutes:02}分{seconds:02}秒".format(
+                hours=hours, minutes=mm, seconds=ss
+            )
 
     @property
     def display_video_not_included(self) -> Union[str, None]:
         if self.src_video_duration is None:
             return None
-        difference_of_durations: timedelta = self.src_video_duration - self.out_video_duration
-        percentage: float = difference_of_durations.total_seconds() * 100 / self.src_video_duration.total_seconds()
+        difference_of_durations: timedelta = (
+            self.src_video_duration - self.out_video_duration
+        )
+        percentage: float = (
+            difference_of_durations.total_seconds()
+            * 100
+            / self.src_video_duration.total_seconds()
+        )
         return format(percentage, ".2f")
 
     @property
     def diplay_src_file_size(self) -> str:
-        return format(self.src_file_size / (1024*1024), ".2f")
+        return format(self.src_file_size / (1024 * 1024), ".2f")
 
     @property
     def display_int_file_size(self) -> str:
-        return format(self.int_video_file_size / (1024*1024), ".2f")
+        return format(self.int_video_file_size / (1024 * 1024), ".2f")
 
     @property
     def display_out_file_size(self) -> str:
-        return format(self.out_file_size / (1024*1024), ".2f")
+        return format(self.out_file_size / (1024 * 1024), ".2f")
 
     @property
     def display_int_video_rate(self) -> str:
         return format(self.int_video_file_size * 100 / self.src_file_size, ".2f")
-    
+
     @property
     def display_compression_rate(self) -> str:
         return format(self.out_file_size * 100 / self.src_file_size, ".2f")
-    
+
     @property
     def display_src_audio_frames(self) -> Union[str, None]:
         if self.audio_diff is None:
             return None
         else:
             return str(self.audio_diff.total_src_frames)
-    
+
     @property
     def display_out_audio_frames(self) -> Union[str, None]:
         if self.audio_diff is None:
             return None
         else:
             return str(self.audio_diff.total_out_frames)
-    
+
     @property
     def display_audio_not_included(self) -> Union[str, None]:
         if self.audio_diff is None:
@@ -176,11 +189,11 @@ class LogItem():
             return None
         else:
             return format(self.audio_diff.avg_diff, ".2f")
-    
+
     @property
     def display_reason(self) -> str:
         return self.reason
-    
+
     @property
     def display_audio_max_diff(self) -> Union[str, None]:
         if self.audio_diff is None:
@@ -200,7 +213,11 @@ class LogItem():
         if self.src_video_duration is None:
             return None
         else:
-            return format(self.src_video_duration.total_seconds() / self.encode_duration.total_seconds(), ".2f")
+            return format(
+                self.src_video_duration.total_seconds()
+                / self.encode_duration.total_seconds(),
+                ".2f",
+            )
 
     @property
     def display_src_bitrate(self) -> Union[str, None]:
@@ -208,35 +225,33 @@ class LogItem():
             return None
         else:
             format(
-                self.src_file_size / (
-                    self.src_video_duration.total_seconds() * 128 * 1024
-                ),
+                self.src_file_size
+                / (self.src_video_duration.total_seconds() * 128 * 1024),
                 ".3f",
             )
-    
+
     @property
     def display_out_bitrate(self) -> Union[str, None]:
         if self.src_video_duration is None:
             return None
         else:
             return format(
-                self.out_file_size / (
-                    self.out_video_duration.total_seconds() * 128 * 1024
-                ),
+                self.out_file_size
+                / (self.out_video_duration.total_seconds() * 128 * 1024),
                 ".3f",
             )
 
     @property
     def display_logo(self) -> str:
         return next(iter(self.logo_files), "なし")
-    
+
     @property
     def display_chapter(self) -> str:
         if self.chapter:
             return "○"
         else:
             return "☓"
-    
+
     @property
     def display_nico_jk(self) -> str:
         if self.nico_jk:
@@ -273,13 +288,13 @@ class LogItem():
     @property
     def display_service(self) -> str:
         return f"{self.service_name}({self.service_id})"
-    
+
     @property
     def display_ts_time(self) -> str:
         if self.ts_time == datetime.min:
             return "不明"
         return self.ts_time.strftime("%Y年%m月%d日")
-    
+
     @property
     def display_tags(self) -> str:
         if self.tags is None:

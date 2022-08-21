@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class MakeScriptData():
+class MakeScriptData:
     profile: str
     out_dir: str
     nas_dir: str

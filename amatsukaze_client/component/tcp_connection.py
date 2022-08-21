@@ -1,7 +1,8 @@
 import socket
 from ipaddress import IPv4Address
 
-class TcpConnection():
+
+class TcpConnection:
     __socket: socket.socket
 
     def __init__(self) -> None:
@@ -9,7 +10,7 @@ class TcpConnection():
 
     def connect(self, ip: IPv4Address, port: int) -> None:
         self.__socket.connect((ip.exploded, port))
-    
+
     def send(self, messsage: bytes) -> int:
         return self.__socket.send(messsage)
 

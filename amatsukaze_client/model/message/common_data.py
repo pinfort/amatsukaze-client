@@ -8,8 +8,9 @@ from amatsukaze_client.model.message.disk_item import DiskItem
 from amatsukaze_client.model.message.server_info import ServerInfo
 from amatsukaze_client.model.message.finish_setting import FinishSetting
 
+
 @dataclass
-class CommonData():
+class CommonData:
     ui_state: UiState
     setting: Setting
     make_script_data: MakeScriptData

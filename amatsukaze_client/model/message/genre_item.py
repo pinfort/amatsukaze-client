@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class GenreItem():
+class GenreItem:
     """
     Level1==0xE(拡張)かどうかで入れられる値が変わる
     拡張でない場合
@@ -15,6 +15,7 @@ class GenreItem():
     GenreSpaceにない値が使用されることがあるのでint型とする
     （GenreSpaceにするとシリアライズでエラーとなるので）
     """
+
     space: int
     level1: int
     level2: int

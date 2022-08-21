@@ -3,8 +3,9 @@ from typing import List
 
 from amatsukaze_client.model.message.logo_setting import LogoSetting
 
+
 @dataclass
-class ServiceSettingElement():
+class ServiceSettingElement:
     service_id: int
     service_name: str
     disable_cm_check: bool
