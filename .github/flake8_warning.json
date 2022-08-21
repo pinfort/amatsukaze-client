@@ -1,7 +1,7 @@
 {
   "flake8_warning": [
     {
-      "owner": "pinfort",
+      "owner": "flake8_warning",
       "severity": "warning",
       "pattern": [
         {
