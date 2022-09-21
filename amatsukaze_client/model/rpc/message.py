@@ -32,9 +32,9 @@ def from_messages_bytes(messages: bytes) -> Iterator[AmatsukazeRPCMessage]:
         message_length: int = int.from_bytes(
             messages[offset : offset + 4], byteorder="little"
         )
-        offset: int = offset + 4
+        offset = offset + 4
         message: bytes = messages[offset : offset + message_length]
-        offset: int = offset + message_length
+        offset = offset + message_length
         yield AmatsukazeRPCMessage(
             length=message_length,
             message_body=message,
