@@ -1,6 +1,6 @@
+import os
 from dataclasses import dataclass
 from datetime import datetime, timedelta
-import os
 
 from amatsukaze_client.enum.message.check_type import CheckType
 

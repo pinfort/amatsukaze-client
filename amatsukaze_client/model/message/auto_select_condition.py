@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from typing import List
 
-from amatsukaze_client.model.message.genre_item import GenreItem
 from amatsukaze_client.enum.message.video_size_condition import VideoSizeCondition
+from amatsukaze_client.model.message.genre_item import GenreItem
 
 
 @dataclass

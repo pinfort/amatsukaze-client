@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 from typing import List
 
+from amatsukaze_client.enum.message.proc_mode import ProcMode
 from amatsukaze_client.model.message.add_queue_item import AddQueueItem
 from amatsukaze_client.model.message.output_info import OutputInfo
-from amatsukaze_client.enum.message.proc_mode import ProcMode
 
 
 @dataclass

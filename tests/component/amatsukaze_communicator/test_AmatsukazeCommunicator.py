@@ -2,8 +2,8 @@ from ipaddress import IPv4Address
 
 from amatsukaze_client.component.amatsukaze_communicator import AmatsukazeCommunicator
 from amatsukaze_client.component.tcp_connection import TcpConnection
-from amatsukaze_client.model.rpc.message import AmatsukazeRPCMessage
 from amatsukaze_client.enum.rpc.message_type_id import AmatsukazeRPCMessageTypeId
+from amatsukaze_client.model.rpc.message import AmatsukazeRPCMessage
 from amatsukaze_client.model.rpc.message_container import AmatsukazeRPCMessageContainer
 
 
