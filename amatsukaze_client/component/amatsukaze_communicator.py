@@ -1,6 +1,7 @@
 from typing import Iterator
 
 from amatsukaze_client.component.tcp_connection import TcpConnection
+from amatsukaze_client.enum.rpc.message_type_id import AmatsukazeRPCMessageTypeId
 from amatsukaze_client.model.rpc.message_container import (
     AmatsukazeRPCMessageContainer,
     from_messages_bytes,
@@ -28,5 +29,5 @@ class AmatsukazeCommunicator:
         )
         messages: bytes = self.__tcp_connection.recv(messages_length)
         return from_messages_bytes(
-            message_type_id=messages_type_id, length=messages_length, messages=messages
+            message_type_id=AmatsukazeRPCMessageTypeId(messages_type_id), length=messages_length, messages_bytes=messages
         )

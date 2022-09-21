@@ -1,5 +1,5 @@
-from ctypes import Union
 from dataclasses import dataclass
+from typing import Union
 
 from amatsukaze_client.enum.message.state_change_event import StateChangeEvent
 from amatsukaze_client.model.message.check_log_data import CheckLogData

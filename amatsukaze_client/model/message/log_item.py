@@ -66,7 +66,7 @@ class LogItem:
 
     @property
     def display_out_directory(self) -> Union[str, None]:
-        if self.out_path is not None and self.out_path.count() > 0:
+        if self.out_path is not None and len(self.out_path) > 0:
             return os.path.dirname(self.out_path[0])
         return "-"
 
@@ -81,7 +81,7 @@ class LogItem:
         if self.out_path is None:
             return "-"
         else:
-            return str(self.out_path.count())
+            return str(len(self.out_path))
 
     @property
     def display_num_incident(self) -> str:
@@ -199,14 +199,14 @@ class LogItem:
         if self.audio_diff is None:
             return None
         else:
-            format(self.audio_diff.max_diff, ".2f")
+            return format(self.audio_diff.max_diff, ".2f")
 
     @property
     def display_audio_max_diff_pos(self) -> Union[str, None]:
         if self.audio_diff is None:
             return None
         else:
-            format(self.audio_diff.max_diff_pos, ".2f")
+            return format(self.audio_diff.max_diff_pos, ".2f")
 
     @property
     def display_encode_speed(self) -> Union[str, None]:
@@ -224,7 +224,7 @@ class LogItem:
         if self.src_video_duration is None:
             return None
         else:
-            format(
+            return format(
                 self.src_file_size
                 / (self.src_video_duration.total_seconds() * 128 * 1024),
                 ".3f",

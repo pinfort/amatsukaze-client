@@ -36,6 +36,8 @@ class AmatsukazeRPCMessageContainer:
         return message_bytes
 
     def __eq__(self, __o: object) -> bool:
+        if not isinstance(__o, AmatsukazeRPCMessageContainer):
+            return False
         return (
             self.length == __o.length
             and self.message_type_id == __o.message_type_id
