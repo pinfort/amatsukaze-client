@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 
+from amatsukaze_client.enum.message.d3dvpgpu import D3dvpgpu
 from amatsukaze_client.enum.message.deblock_strength import DeblockStrength
 from amatsukaze_client.enum.message.deinterlace_algorithm import DeinterlaceAlgorithm
-from amatsukaze_client.enum.message.d3dvpgpu import D3dvpgpu
-from amatsukaze_client.enum.message.qtgmc_preset import QtgmcPreset
 from amatsukaze_client.enum.message.filter_fps import FilterFps
+from amatsukaze_client.enum.message.qtgmc_preset import QtgmcPreset
 
 
 @dataclass

@@ -2,8 +2,8 @@ from dataclasses import dataclass
 from typing import Iterator, List
 
 from amatsukaze_client.enum.rpc.message_type_id import AmatsukazeRPCMessageTypeId
+from amatsukaze_client.model.rpc.message import AmatsukazeRPCMessage
 from amatsukaze_client.model.rpc.message import (
-    AmatsukazeRPCMessage,
     from_messages_bytes as amatsukaze_message_from_messages_bytes,
 )
 

@@ -1,12 +1,12 @@
+import os
 from dataclasses import dataclass
 from datetime import datetime, timedelta
-import os
 from typing import List
 
 from amatsukaze_client.enum.message.proc_mode import ProcMode
-from amatsukaze_client.model.message.profile_setting import ProfileSetting
 from amatsukaze_client.enum.message.queue_state import QueueState
 from amatsukaze_client.model.message.genre_item import GenreItem
+from amatsukaze_client.model.message.profile_setting import ProfileSetting
 
 
 @dataclass

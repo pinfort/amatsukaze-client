@@ -1,4 +1,5 @@
 from typing import Iterator
+
 from amatsukaze_client.component.tcp_connection import TcpConnection
 from amatsukaze_client.model.rpc.message_container import (
     AmatsukazeRPCMessageContainer,

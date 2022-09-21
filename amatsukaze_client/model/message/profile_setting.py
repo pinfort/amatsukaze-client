@@ -2,14 +2,14 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import List
 
-from amatsukaze_client.enum.message.encoder_type import EncoderType
 from amatsukaze_client.enum.message.audio_encoder_type import AudioEncoderType
 from amatsukaze_client.enum.message.decoder_type import DecoderType
-from amatsukaze_client.enum.message.format_type import FormatType
+from amatsukaze_client.enum.message.encoder_type import EncoderType
 from amatsukaze_client.enum.message.filter_option import FilterOption
+from amatsukaze_client.enum.message.format_type import FormatType
+from amatsukaze_client.model.message.bitrate_setting import BitrateSetting
 from amatsukaze_client.model.message.filter_setting import FilterSetting
 from amatsukaze_client.model.message.req_resource import ReqResource
-from amatsukaze_client.model.message.bitrate_setting import BitrateSetting
 
 
 @dataclass
