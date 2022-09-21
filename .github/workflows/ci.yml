@@ -62,7 +62,7 @@ jobs:
     - name: Poetry Install Dependencies
       run: |
         poetry install --no-interaction
-    - name: Test with pytest
+    - name: Test with isort
       run: |
         poetry run isort --check .
   mypy:
@@ -86,6 +86,6 @@ jobs:
     - name: Poetry Install Dependencies
       run: |
         poetry install --no-interaction
-    - name: Test with pytest
+    - name: Test with mypy
       run: |
         poetry run mypy --namespace-packages .
